@@ -88,6 +88,10 @@ Modify this file to point to the correct server:
 
 Ok, we are now ready to start testing Grafeas. In this repository you have a client.py that could help you to understand how the client works ;).
 
+### Client.py
+
+This script will help you to understand how grafeas python-client works, the code is simple. Just modify as your needs to test the server.
+
 Enjoy!
 
 ### The problem
