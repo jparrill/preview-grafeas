@@ -1,0 +1,32 @@
+{
+  "name": "projects/scanning-customer/occurrences/randomId1234",
+  "resourceUrl": "https://gcr.io/scanning-customer/dockerimage@sha256:hash",
+  "noteName": "projects/security-scanner/notes/CVE-2017-14159",
+  "kind": "PACKAGE_VULNERABILITY",
+  "createTime": "2017-09-29T02:58:23.376798Z",
+  "updateTime": "2017-09-29T07:35:22.141762Z",
+  "vulnerabilityDetails": {
+    "severity": "LOW",
+    "cvssScore": 1.9,
+    "packageIssue": [
+      {
+        "affectedLocation": {
+          "cpeUri": "cpe:/o:debian:debian_linux:8",
+          "package": "openldap",
+          "version": {
+            "name": "2.4.40+dfsg",
+            "revision": "1+deb8u2"
+          }
+        },
+        "fixedLocation": {
+          "cpeUri": "cpe:/o:debian:debian_linux:8",
+          "package": "openldap",
+          "version": {
+            "kind": "MAXIMUM"
+          }
+        },
+        "severityName": "LOW"
+      }
+    ]
+  }
+}

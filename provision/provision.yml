@@ -1,0 +1,88 @@
+---
+- name: 'Provision a grafeas server for development'
+  hosts: all
+  user: root
+  gather_facts: False
+  vars:
+    vm_provision: "{{ vm | default(false) }}"
+    docker_build_path: '/tmp/Grafeas/samples/server/go-server/api/server'
+    docker_build_path_container: '/go/src/github.com/grafeas/grafeas/samples/server/go-server/api/server/main'
+    docker_build_name: 'grafeas-build'
+    docker_cont_name: 'grafeas-cont'
+    docker_server_name: 'grafeas-server'
+  tasks:
+    - block:
+      - block:
+        - name: 'Check Python'
+          stat: 
+            path: '/usr/bin/python'
+          register: python
+      
+        rescue:
+        - name: 'Raw install python2 and python-simplejson'
+          raw: 'dnf install python python-simplejson -y'
+          when: not python | bool
+      
+        always:
+        - name: 'Load Facts'
+          setup:
+          
+      - name: 'Install required packages'
+        dnf: 
+          name: "{{ item }}"
+          state: present
+        with_items:
+          - 'golang'
+          - 'git'
+          - 'protobuf-compiler'
+          - 'docker'
+          - 'python-docker-py'
+      
+      - name: 'Start services'
+        service:
+          name: "{{ item }}"
+          state: started
+          enabled: true
+        with_items:
+          - 'docker'
+
+      when: vm_provision | bool 
+
+    - name: 'Download Grafeas Source Code'
+      git:
+        repo: "{{ item.repo }}"
+        dest: "{{ item.dest }}"
+      with_items:
+        - { repo: 'https://github.com/jparrill/Grafeas.git', dest: '/tmp/Grafeas' }
+
+    - name: 'Build image that compiles Grafeas Binary'
+      docker_image:
+        path: "{{ docker_build_path }}"
+        name: "{{ docker_build_name }}"
+        dockerfile: 'grafeas.build'
+
+    - name: 'Create a container to extract binary server'
+      docker_container:
+        name: "{{ docker_cont_name }}"
+        state: present
+        image: "{{ docker_build_name }}"
+
+    - name: 'Extract the binary from container'
+      command: "docker cp {{ docker_cont_name }}:{{ docker_build_path_container }}/grafeas-server {{ docker_build_path }}/main/grafeas-server"
+      args:
+        creates: '{{ docker_build_path }}/main/grafeas-server'
+
+    - name: 'Build grafeas server image'
+      docker_image:
+        path: "{{ docker_build_path }}"
+        name: "{{ docker_server_name }}"
+        dockerfile: 'grafeas_server.build'
+
+    - name: 'Raise the grafeas server up'
+      docker_container:
+        name: "{{ docker_server_name }}_01"
+        image: "{{ docker_server_name }}"
+        state: started
+        ports:
+          - '10000:10000'
+        recreate: true

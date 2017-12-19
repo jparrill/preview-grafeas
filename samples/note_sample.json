@@ -1,0 +1,120 @@
+{
+  "name": "projects/security-scanner/notes/CVE-2017-14159",
+  "shortDescription": "CVE-2017-14159",
+  "longDescription": "NIST vectors: AV:L/AC:M/Au:N/C:N/I:N",
+  "relatedUrl": [
+    {
+      "url": "https://security-tracker.debian.org/tracker/CVE-2017-14159",
+      "label": "More Info"
+    },
+    {
+      "url": "http://people.ubuntu.com/~ubuntu-security/cve/CVE-2017-14159",
+      "label": "More Info"
+    }
+  ],
+  "kind": "PACKAGE_VULNERABILITY",
+  "createTime": "2017-09-05T21:44:52.071982Z",
+  "updateTime": "2017-09-29T16:16:01.140652Z",
+  "vulnerabilityType": {
+    "cvssScore": 1.9,
+    "severity": "LOW",
+    "details": [
+      {
+        "cpeUri": "cpe:/o:debian:debian_linux:7",
+        "severityName": "LOW",
+        "fixedLocation": {
+          "cpeUri": "cpe:/o:debian:debian_linux:7",
+          "package": "openldap",
+          "version": {
+            "kind": "MAXIMUM"
+          }
+        },
+        "minAffectedVersion": {
+          "kind": "MINIMUM"
+        },
+        "package": "openldap",
+        "description": "slapd in OpenLDAP 2.4.45 and earlier creates a PID file after dropping privileges to a non-root account, which might allow local users to kill arbitrary processes by leveraging access to this non-root account for PID file modification before a root script executes a \"kill `cat /pathname`\" command, as demonstrated by openldap-initscript."
+      },
+      {
+        "cpeUri": "cpe:/o:debian:debian_linux:unstable",
+        "severityName": "LOW",
+        "fixedLocation": {
+          "cpeUri": "cpe:/o:debian:debian_linux:unstable",
+          "package": "openldap",
+          "version": {
+            "kind": "MAXIMUM"
+          }
+        },
+        "minAffectedVersion": {
+          "kind": "MINIMUM"
+        },
+        "package": "openldap",
+        "description": "slapd in OpenLDAP 2.4.45 and earlier creates a PID file after dropping privileges to a non-root account, which might allow local users to kill arbitrary processes by leveraging access to this non-root account for PID file modification before a root script executes a \"kill `cat /pathname`\" command, as demonstrated by openldap-initscript."
+      },
+      {
+        "cpeUri": "cpe:/o:debian:debian_linux:9",
+        "severityName": "LOW",
+        "fixedLocation": {
+          "cpeUri": "cpe:/o:debian:debian_linux:9",
+          "package": "openldap",
+          "version": {
+            "kind": "MAXIMUM"
+          }
+        },
+        "minAffectedVersion": {
+          "kind": "MINIMUM"
+        },
+        "package": "openldap",
+        "description": "slapd in OpenLDAP 2.4.45 and earlier creates a PID file after dropping privileges to a non-root account, which might allow local users to kill arbitrary processes by leveraging access to this non-root account for PID file modification before a root script executes a \"kill `cat /pathname`\" command, as demonstrated by openldap-initscript."
+      },
+      {
+        "cpeUri": "cpe:/o:debian:debian_linux:8",
+        "severityName": "LOW",
+        "fixedLocation": {
+          "cpeUri": "cpe:/o:debian:debian_linux:8",
+          "package": "openldap",
+          "version": {
+            "kind": "MAXIMUM"
+          }
+        },
+        "minAffectedVersion": {
+          "kind": "MINIMUM"
+        },
+        "package": "openldap",
+        "description": "slapd in OpenLDAP 2.4.45 and earlier creates a PID file after dropping privileges to a non-root account, which might allow local users to kill arbitrary processes by leveraging access to this non-root account for PID file modification before a root script executes a \"kill `cat /pathname`\" command, as demonstrated by openldap-initscript."
+      },
+      {
+        "cpeUri": "cpe:/o:canonical:ubuntu_linux:14.04",
+        "severityName": "LOW",
+        "fixedLocation": {
+          "cpeUri": "cpe:/o:canonical:ubuntu_linux:14.04",
+          "package": "openldap",
+          "version": {
+            "kind": "MAXIMUM"
+          }
+        },
+        "minAffectedVersion": {
+          "kind": "MINIMUM"
+        },
+        "package": "openldap",
+        "description": "slapd in OpenLDAP 2.4.45 and earlier creates a PID file after dropping privileges to a non-root account, which might allow local users to kill arbitrary processes by leveraging access to this non-root account for PID file modification before a root script executes a \"kill `cat /pathname`\" command, as demonstrated by openldap-initscript."
+      },
+      {
+        "cpeUri": "cpe:/o:canonical:ubuntu_linux:16.04",
+        "severityName": "LOW",
+        "fixedLocation": {
+          "cpeUri": "cpe:/o:canonical:ubuntu_linux:16.04",
+          "package": "openldap",
+          "version": {
+            "kind": "MAXIMUM"
+          }
+        },
+        "minAffectedVersion": {
+          "kind": "MINIMUM"
+        },
+        "package": "openldap",
+        "description": "slapd in OpenLDAP 2.4.45 and earlier creates a PID file after dropping privileges to a non-root account, which might allow local users to kill arbitrary processes by leveraging access to this non-root account for PID file modification before a root script executes a \"kill `cat /pathname`\" command, as demonstrated by openldap-initscript."
+      }
+    ]
+  }
+}
