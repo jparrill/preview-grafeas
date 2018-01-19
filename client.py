@@ -1,6 +1,7 @@
 import datetime
 import random
 import swagger_client
+import json
 from swagger_client.rest import ApiException
 from pprint import pprint
 
@@ -30,7 +31,7 @@ class NoteComposser(object):
             return self.create_vulnerability()
 
         else:
-            pass 
+            print "Error on constructor"
 
     def create_vulnerability(self):
         data = {}
@@ -51,8 +52,10 @@ class NoteComposser(object):
         return data
 
 
-    def push_note(self):
-        self.note_data = self.constructor(self.kind)
+    def push_note(self, data):
+        if not data:
+            self.note_data = self.constructor(self.kind)
+
         graf = swagger_client.GrafeasApi()
         projects_id = self.project_id
         note_id = self.note_id
@@ -80,6 +83,6 @@ project_id = 'test01' # str | Part of `parent`. This field contains the projectI
 note_id = 'CVE-2017-14976' # str | The ID to use for this note. (optional)
 
 nc = NoteComposser(project_id, note_id)
-nc.push_note()
+nc.push_note(json.load(open('samples/note_sample.json')))
 #nc.get_note()
 
