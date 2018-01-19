@@ -82,6 +82,7 @@
       docker_container:
         name: "{{ docker_server_name }}_01"
         image: "{{ docker_server_name }}"
+        command: '/grafeas-server'
         state: started
         ports:
           - '10000:10000'
