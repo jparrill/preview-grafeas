@@ -59,7 +59,7 @@
       docker_image:
         path: "{{ docker_build_path }}"
         name: "{{ docker_build_name }}"
-        dockerfile: 'grafeas.build'
+        dockerfile: 'grafeas_server.build'
 
     - name: 'Create a container to extract binary server'
       docker_container:
