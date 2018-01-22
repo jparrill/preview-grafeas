@@ -1,0 +1,10 @@
+{
+  "name": "projects/parri/notes/production",
+  "shortDescription": "Production parri man.",
+  "longDescription": "Production parri man.",
+  "attestationAuthority": {
+    "hint": {
+      "humanReadableName": "parri"
+    }
+  }
+}
