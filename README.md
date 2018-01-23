@@ -132,6 +132,7 @@ Enjoy!
 - [Kubecon Presentation](https://schd.ws/hosted_files/kccncna17/c6/KubeCon%202017_%20Grafeas%20BoF%202017-12-06.pdf)
 - [Kubecon Grafeas Meetup](https://schd.ws/hosted_files/kccncna17/6a/KubeCon%202017_%20Grafeas%20Meet-Up%20%282017-12-08%29.pdf)
 - [Grafeas Python Client](https://github.com/Grafeas/client-python)
+- [Grafeas Tutorial](https://github.com/kelseyhightower/grafeas-tutorial)
 
 # Kritis
 
