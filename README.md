@@ -134,6 +134,10 @@ Enjoy!
 - [Grafeas Python Client](https://github.com/Grafeas/client-python)
 - [Grafeas Tutorial](https://github.com/kelseyhightower/grafeas-tutorial)
 
+## Demo
+
+- [Grafeas with Minishift on Asciinema](https://asciinema.org/a/Xn7NdEYTrYnJmrRcyiQv4zO6t)
+
 # Kritis
 
 ## To be continue...
