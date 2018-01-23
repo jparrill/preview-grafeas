@@ -316,4 +316,9 @@ if __name__ == '__main__':
 
 
 ### Samples
-# 
+# python grafctl.py -v push_note -n 'note_02' -p 'myproject'
+# python grafctl.py -v get_note -n 'note_02' -p 'myproject'
+# python grafctl.py -v get_occurrence -o 'occurence_02' -p 'myproject'
+# python grafctl.py -v list_notes -p 'myproject'
+# python grafctl.py -v list_occurrences -p 'myproject' -n 'note_02'
+###
